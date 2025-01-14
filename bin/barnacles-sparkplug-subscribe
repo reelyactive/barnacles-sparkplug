@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+const mqtt = require('mqtt');
+const sparkplug = require('sparkplug-payload').get('spBv1.0');
+
+const client = mqtt.connect('mqtt://localhost', {});
+
+client.on('connect', () => {
+  console.log('Connected to MQTT on localhost');
+  client.subscribe('spBv1.0/#', (err) => {
+    if(!err) { console.log('Subscribed to spBv1.0/#'); }
+  });
+});
+
+client.on('message', (topic, message) => {
+  console.log('\r\nTopic:', topic);
+  console.log(sparkplug.decodePayload(message));
+});

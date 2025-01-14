@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const BarnaclesSparkplug = require('../lib/barnaclessparkplug.js');
+
+
+let barnaclesSparkplug = new BarnaclesSparkplug({ printErrors: true });
+
+
+console.log('barnacles-sparkplug instantiation test');
