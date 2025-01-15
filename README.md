@@ -10,6 +10,132 @@ __barnacles-sparkplug__ ingests a real-time stream of _dynamb_ objects from [bar
 __barnacles-sparkplug__ is a lightweight [Node.js package](https://www.npmjs.com/package/barnacles-sparkplug) that can run on resource-constrained edge devices as well as on powerful cloud servers and anything in between.
 
 
+Pareto Anywhere integration
+---------------------------
+
+A common application of __barnacles-sparkplug__ is to publish IoT data from [pareto-anywhere](https://github.com/reelyactive/pareto-anywhere) as Sparkplug B payloads via MQTT.  Simply follow our [Create a Pareto Anywhere startup script](https://reelyactive.github.io/diy/pareto-anywhere-startup-script/) tutorial using the script below:
+
+```javascript
+#!/usr/bin/env node
+
+const ParetoAnywhere = require('../lib/paretoanywhere.js');
+
+// Edit the options to customise the server
+const BARNACLES_SPARKPLUG_OPTIONS = {};
+
+// ----- Exit gracefully if the optional dependency is not found -----
+let BarnaclesSparkplug;
+try {
+  BarnaclesSparkplug = require('barnacles-sparkplug');
+}
+catch(err) {
+  console.log('This script requires barnacles-sparkplug.  Install with:');
+  console.log('\r\n    "npm install barnacles-sparkplug"\r\n');
+  return console.log('and then run this script again.');
+}
+// -------------------------------------------------------------------
+
+let pa = new ParetoAnywhere();
+pa.barnacles.addInterface(BarnaclesSparkplug, BARNACLES_SPARKPLUG_OPTIONS);
+```
+
+
+Quick Start
+-----------
+
+Clone this repository, then from its root folder, install dependencies with `npm install`.  Start the Sparkplug client with the following command:
+
+    npm start
+
+If a MQTT broker is running on localhost, the client should connect (without authentication) and publish a NBIRTH message.  For convenience, a script to subscribe to Sparkplug messages (topic: spBv1.0/#) on localhost and print these to the console is provided, and can be started with the following command:
+
+    npm run subscribe
+
+When both programs are run simultaneously, the latter will echo all Sparkplug messages to the console, starting with the NBIRTH message which will have the following format:
+
+    Topic: spBv1.0/iot/NBIRTH/paretoanywhere
+    {
+      timestamp: Long { low: 1735707600, high: 404, unsigned: true },
+      metrics: [],
+      seq: Long { low: 0, high: 0, unsigned: true }
+    }
+
+
+Simulated Data
+--------------
+
+The following simulated devices/sensors are supported for interface testing.
+
+### Minew S1
+
+To simulate a [Minew S1](https://www.minew.com/product/s1-ble-temperature-and-humidity-sensor/) temperature/humidity sensor, start __barnacles-sparkplug__ with the following command:
+
+    npm run minew-s1
+
+Simulated sensor `c30000000051` will expose the following metrics:
+
+| name              | type   |
+|:------------------|:-------|
+| temperature       | Double |
+| relativeHumidity  | Double |
+| batteryPercentage | Double |
+
+
+Supported dynamb properties
+---------------------------
+
+__barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io/diy/cheatsheet/#dynamb) properties into the following Protobuf types:
+
+| Property          | Data Type        | Conversion                           | 
+|:------------------|:-----------------|:-------------------------------------|
+| acceleration      | Double           | RMS of x, y, z                       |
+| amperage          | Double           | none                                 |
+| angleOfRotation   | Double           | none                                 |
+| amperages         | Double           | RMS of all values                    |
+| batteryPercentage | Double           | none                                 |
+| batteryVoltage    | Double           | none                                 |
+| distance          | Double           | none                                 |
+| elevation         | Double           | none                                 |
+| heading           | Double           | none                                 |
+| heartRate         | Double           | none                                 |
+| illuminance       | Double           | none                                 |
+| isButtonPressed   | Boolean          | Logical OR of all values             |
+| isContactDetected | Boolean          | Logical OR of all values             |
+| isHealthy         | Boolean          | none                                 |
+| isMotionDetected  | Boolean          | Logical OR of all values             |
+| isLiquidDetected  | Boolean          | Logical OR of all values             |
+| levelPercentage   | Double           | none                                 |
+| magneticField     | Double           | RMS of x, y, z                       |
+| numberOfOccupants | UInt64           | none                                 |
+| passageCounts     | UInt64           | Sum of all values                    |
+| pressure          | Double           | none                                 |
+| pressures         | Double           | RMS of all values                    |
+| relativeHumidity  | Double           | none                                 |
+| speed             | Double           | none                                 |
+| temperature       | Double           | none                                 |
+| temperatures      | Double           | RMS of all values                    |
+| txCount           | UInt64           | none                                 |
+| uptime            | UInt64           | none                                 |
+| voltage           | Double           | none                                 |
+| voltages          | Double           | RMS of all values                    |
+
+
+Options
+-------
+
+__barnacles-sparkplug__ supports the following options:
+
+| Property    | Default                  | Description                      | 
+|:------------|:-------------------------|:---------------------------------|
+| url         | "mqtt://localhost"       | Local MQTT broker                |
+| groupId     | "iot"                    | See Sparkplug specification      |
+| edgeNodeId  | "paretoanywhere"         | See Sparkplug specification      |
+| clientId    | "ParetoAnywhereEdgeNode" | Unique id of MQTT client         |
+| username    | null                     | Optional for MQTT authentication |
+| password    | null                     | Optional for MQTT authentication |
+| printErrors | false                    | Print MQTT errors?               |
+
+
 Contributing
 ------------
 
