@@ -84,7 +84,7 @@ Simulated sensor `c30000000051` will expose the following metrics:
 Supported dynamb properties
 ---------------------------
 
-__barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io/diy/cheatsheet/#dynamb) properties into the following Protobuf types:
+__barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io/diy/cheatsheet/#dynamb) properties into the following Protobuf data types:
 
 | Property          | Data Type        | Conversion                           | 
 |:------------------|:-----------------|:-------------------------------------|
