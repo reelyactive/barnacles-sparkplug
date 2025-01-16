@@ -136,6 +136,12 @@ __barnacles-sparkplug__ supports the following options:
 | printErrors | false                    | Print MQTT errors?               |
 
 
+Acknowledgements
+----------------
+
+__barnacles-sparkplug__ is based on the [sparkplug-client](https://www.npmjs.com/package/sparkplug-client) open source Node.js package of the [Eclipse Tahu](https://github.com/eclipse-tahu/tahu/) project which is licensed under the [Eclipse Public License v2.0](https://www.eclipse.org/legal/epl-2.0/) (EPL-2.0), and which we invite you to consider supporting at [sparkplug.eclipse.org](https://sparkplug.eclipse.org/).
+
+
 Contributing
 ------------
 
