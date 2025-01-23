@@ -112,7 +112,7 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 | methaneConcentration         | Double             | none                    |
 | nitrogenDioxideConcentration | Double             | none                    |
 | numberOfOccupants            | UInt32             | none                    |
-| passageCounts                | DataSet of UInt32  | Single-column           |
+| passageCounts                | DataSet of UInt32  | 1 or 2-column           |
 | pressure                     | Double             | none                    |
 | pressures                    | DataSet of Double  | Single-column           |
 | relativeHumidity             | Double             | none                    |
