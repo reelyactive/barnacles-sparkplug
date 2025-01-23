@@ -102,11 +102,11 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 | heading                      | Double             | none                    |
 | heartRate                    | Double             | none                    |
 | illuminance                  | Double             | none                    |
-| isButtonPressed              | DataSet of Boolean | Single-column           |
-| isContactDetected            | DataSet of Boolean | Single-column           |
+| isButtonPressed              | Boolean            | Logical OR (if many)    |
+| isContactDetected            | Boolean            | Logical OR (if many)    |
 | isHealthy                    | Boolean            | none                    |
-| isMotionDetected             | DataSet of Boolean | Single-column           |
-| isLiquidDetected             | DataSet of Boolean | Single-column           |
+| isMotionDetected             | Boolean            | Logical OR (if many)    |
+| isLiquidDetected             | Boolean            | Logical OR (if many)    |
 | levelPercentage              | Double             | none                    |
 | magneticField                | DataSet of Double  | Single-column           |
 | methaneConcentration         | Double             | none                    |
