@@ -86,38 +86,44 @@ Supported dynamb properties
 
 __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io/diy/cheatsheet/#dynamb) properties into the following Protobuf data types:
 
-| Property          | Data Type          | Conversion                         | 
-|:------------------|:-------------------|:-----------------------------------|
-| acceleration      | DataSet of Double  | Single-column                      |
-| amperage          | Double             | none                               |
-| angleOfRotation   | Double             | none                               |
-| amperages         | DataSet of Double  | Single-column                      |
-| batteryPercentage | Double             | none                               |
-| batteryVoltage    | Double             | none                               |
-| distance          | Double             | none                               |
-| elevation         | Double             | none                               |
-| heading           | Double             | none                               |
-| heartRate         | Double             | none                               |
-| illuminance       | Double             | none                               |
-| isButtonPressed   | DataSet of Boolean | Single-column                      |
-| isContactDetected | DataSet of Boolean | Single-column                      |
-| isHealthy         | Boolean            | none                               |
-| isMotionDetected  | DataSet of Boolean | Single-column                      |
-| isLiquidDetected  | DataSet of Boolean | Single-column                      |
-| levelPercentage   | Double             | none                               |
-| magneticField     | DataSet of Double  | Single-column                      |
-| numberOfOccupants | UInt32             | none                               |
-| passageCounts     | DataSet of UInt32  | Single-column                      |
-| pressure          | Double             | none                               |
-| pressures         | DataSet of Double  | Single-column                      |
-| relativeHumidity  | Double             | none                               |
-| speed             | Double             | none                               |
-| temperature       | Double             | none                               |
-| temperatures      | DataSet of Double  | Single-column                      |
-| txCount           | UInt32             | none                               |
-| uptime            | UInt32             | none                               |
-| voltage           | Double             | none                               |
-| voltages          | DataSet of Double  | Single-column                      |
+| Property                     | Data Type          | Conversion              | 
+|:-----------------------------|:-------------------|:------------------------|
+| acceleration                 | DataSet of Double  | Single-column           |
+| amperage                     | Double             | none                    |
+| ammoniaConcentration         | Double             | none                    |
+| angleOfRotation              | Double             | none                    |
+| amperages                    | DataSet of Double  | Single-column           |
+| batteryPercentage            | Double             | none                    |
+| batteryVoltage               | Double             | none                    |
+| carbonDioxideConcentration   | Double             | none                    |
+| carbonMonoxideConcentration  | Double             | none                    |
+| distance                     | Double             | none                    |
+| elevation                    | Double             | none                    |
+| heading                      | Double             | none                    |
+| heartRate                    | Double             | none                    |
+| illuminance                  | Double             | none                    |
+| isButtonPressed              | DataSet of Boolean | Single-column           |
+| isContactDetected            | DataSet of Boolean | Single-column           |
+| isHealthy                    | Boolean            | none                    |
+| isMotionDetected             | DataSet of Boolean | Single-column           |
+| isLiquidDetected             | DataSet of Boolean | Single-column           |
+| levelPercentage              | Double             | none                    |
+| magneticField                | DataSet of Double  | Single-column           |
+| methaneConcentration         | Double             | none                    |
+| nitrogenDioxideConcentration | Double             | none                    |
+| numberOfOccupants            | UInt32             | none                    |
+| passageCounts                | DataSet of UInt32  | Single-column           |
+| pressure                     | Double             | none                    |
+| pressures                    | DataSet of Double  | Single-column           |
+| relativeHumidity             | Double             | none                    |
+| speed                        | Double             | none                    |
+| temperature                  | Double             | none                    |
+| temperatures                 | DataSet of Double  | Single-column           |
+| txCount                      | UInt32             | none                    |
+| uptime                       | UInt32             | none                    |
+| volatileOrganicCompoundsConcentration | Double    | none                    |
+| voltage                      | Double             | none                    |
+| voltages                     | DataSet of Double  | Single-column           |
 
 
 Options
