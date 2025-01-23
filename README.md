@@ -139,6 +139,7 @@ __barnacles-sparkplug__ supports the following options:
 | clientId    | "ParetoAnywhereEdgeNode" | Unique id of MQTT client         |
 | username    | null                     | Optional for MQTT authentication |
 | password    | null                     | Optional for MQTT authentication |
+| deviceTimeoutMilliseconds | 60000      | Activity timeout for DDEATH      |
 | printErrors | false                    | Print MQTT errors?               |
 
 
