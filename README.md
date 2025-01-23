@@ -92,7 +92,7 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 | amperage                     | Double             | none                    |
 | ammoniaConcentration         | Double             | none                    |
 | angleOfRotation              | Double             | none                    |
-| amperages                    | DataSet of Double  | Single-column           |
+| amperages                    | DataSet of Double  | Multi-column (0..n)     |
 | batteryPercentage            | Double             | none                    |
 | batteryVoltage               | Double             | none                    |
 | carbonDioxideConcentration   | Double             | none                    |
@@ -114,16 +114,16 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 | numberOfOccupants            | UInt32             | none                    |
 | passageCounts                | DataSet of UInt32  | 1 or 2-column           |
 | pressure                     | Double             | none                    |
-| pressures                    | DataSet of Double  | Single-column           |
+| pressures                    | DataSet of Double  | Multi-column (0..n)     |
 | relativeHumidity             | Double             | none                    |
 | speed                        | Double             | none                    |
 | temperature                  | Double             | none                    |
-| temperatures                 | DataSet of Double  | Single-column           |
+| temperatures                 | DataSet of Double  | Multi-column (0..n)     |
 | txCount                      | UInt32             | none                    |
 | uptime                       | UInt32             | none                    |
 | volatileOrganicCompoundsConcentration | Double    | none                    |
 | voltage                      | Double             | none                    |
-| voltages                     | DataSet of Double  | Single-column           |
+| voltages                     | DataSet of Double  | Multi-column (0..n)     |
 
 
 Options
