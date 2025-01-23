@@ -88,7 +88,7 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 
 | Property                     | Data Type          | Conversion              | 
 |:-----------------------------|:-------------------|:------------------------|
-| acceleration                 | DataSet of Double  | Single-column           |
+| acceleration                 | DataSet of Double  | 1, 2 or 3-column (xyz)  |
 | amperage                     | Double             | none                    |
 | ammoniaConcentration         | Double             | none                    |
 | angleOfRotation              | Double             | none                    |
@@ -108,7 +108,7 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 | isMotionDetected             | Boolean            | Logical OR (if many)    |
 | isLiquidDetected             | Boolean            | Logical OR (if many)    |
 | levelPercentage              | Double             | none                    |
-| magneticField                | DataSet of Double  | Single-column           |
+| magneticField                | DataSet of Double  | 1, 2 or 3-column (xyz)  |
 | methaneConcentration         | Double             | none                    |
 | nitrogenDioxideConcentration | Double             | none                    |
 | numberOfOccupants            | UInt32             | none                    |
