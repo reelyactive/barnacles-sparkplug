@@ -126,6 +126,18 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 | voltages                     | DataSet of Double  | Multi-column (0..n)     |
 
 
+Integrations
+------------
+
+The [Eclipse Sparkplug](https://sparkplug.eclipse.org/) specification "ensures open and interoperable IIoT" enabling __barnacles-sparkplug__, and hence [Pareto Anywhere](https://www.reelyactive.com/pareto/anywhere/), to integrate seamlessly with the following platforms.
+
+### ThingsBoard
+
+__barnacles-sparkplug__ will automatically publish data to the MQTT broker of a [ThingsBoard](https://thingsboard.io/) instance running on localhost (on port 1883).  Configure the [MQTT Sparkplug API](https://thingsboard.io/docs/reference/mqtt-sparkplug-api/) with a device profile that uses MQTT ClientId `ParetoAnywhereEdgeNode` to receive the data in ThingsBoard.
+
+For advanced integrations with ThingsBoard, configure the __barnacles-sparkplug__ options, listed below.
+
+
 Options
 -------
 
