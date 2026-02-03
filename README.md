@@ -92,27 +92,62 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 | amperage                     | Double             | none                    |
 | ammoniaConcentration         | Double             | none                    |
 | angleOfRotation              | Double             | none                    |
+| angularVelocity              | Double             | none                    |
 | amperages                    | DataSet of Double  | Multi-column (0..n)     |
 | batteryPercentage            | Double             | none                    |
 | batteryVoltage               | Double             | none                    |
 | carbonDioxideConcentration   | Double             | none                    |
 | carbonMonoxideConcentration  | Double             | none                    |
+| count                        | UInt32             | none                    |
+| counts                       | DataSet of UInt32  | Multi-column (0..n)     |
 | distance                     | Double             | none                    |
+| duration                     | Double             | none                    |
+| durations                    | DataSet of Double  | Multi-column (0..n)     |
 | elevation                    | Double             | none                    |
+| energy                       | Double             | none                    |
 | heading                      | Double             | none                    |
 | heartRate                    | Double             | none                    |
 | illuminance                  | Double             | none                    |
 | isButtonPressed              | Boolean            | Logical OR (if many)    |
+| isButtonPressedCycle         | UInt32             | none                    |
+| isCarbonMonoxideDetected     | Boolean            | Logical OR (if many)    |
+| isCarbonMonoxideDetectedCycle | UInt32            | none                    |
 | isContactDetected            | Boolean            | Logical OR (if many)    |
+| isContactDetectedCycle       | UInt32             | none                    |
+| isGasDetected                | Boolean            | Logical OR (if many)    |
+| isGasDetectedCycle           | UInt32             | none                    |
 | isHealthy                    | Boolean            | none                    |
-| isMotionDetected             | Boolean            | Logical OR (if many)    |
+| isInputDetected              | Boolean            | Logical OR (if many)    |
+| isInputDetectedCycle         | UInt32             | none                    |
+| isLightDetected              | Boolean            | Logical OR (if many)    |
+| isLightDetectedCycle         | UInt32             | none                    |
 | isLiquidDetected             | Boolean            | Logical OR (if many)    |
+| isLiquidDetectedCycle        | UInt32             | none                    |
+| isMotionDetected             | Boolean            | Logical OR (if many)    |
+| isMotionDetectedCycle        | UInt32             | none                    |
+| isOccupancyDetected          | Boolean            | Logical OR (if many)    |
+| isOccupancyDetectedCycle     | UInt32             | none                    |
+| isSmokeDetected              | Boolean            | Logical OR (if many)    |
+| isSmokeDetectedCycle         | UInt32             | none                    |
+| isTamperDetected             | Boolean            | Logical OR (if many)    |
+| isTamperDetectedCycle        | UInt32             | none                    |
 | levelPercentage              | Double             | none                    |
+| luminousFlux                 | Double             | none                    |
 | magneticField                | DataSet of Double  | 1, 2 or 3-column (xyz)  |
 | methaneConcentration         | Double             | none                    |
 | nitrogenDioxideConcentration | Double             | none                    |
+| nitrogenOxidesIndex          | UInt32             | none                    |
 | numberOfOccupants            | UInt32             | none                    |
+| numberOfOccupantsCycle       | UInt32             | none                    |
+| numberOfReceivedDevices      | UInt32             | none                    |
+| numberOfStrongestReceivedDevices | UInt32         | none                    |
 | passageCounts                | DataSet of UInt32  | 1 or 2-column           |
+| passageCountsCycle           | UInt32             | none                    |
+| pH                           | Double             | none                    |
+| pm1.0                        | Double             | none                    |
+| pm2.5                        | Double             | none                    |
+| pm10                         | Double             | none                    |
+| power                        | Double             | none                    |
 | pressure                     | Double             | none                    |
 | pressures                    | DataSet of Double  | Multi-column (0..n)     |
 | relativeHumidity             | Double             | none                    |
@@ -120,7 +155,9 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 | temperature                  | Double             | none                    |
 | temperatures                 | DataSet of Double  | Multi-column (0..n)     |
 | txCount                      | UInt32             | none                    |
+| txCycle                      | UInt32             | none                    |
 | uptime                       | UInt32             | none                    |
+| velocityOverall              | DataSet of Double  | 1, 2 or 3-column (xyz)  |
 | volatileOrganicCompoundsConcentration | Double    | none                    |
 | voltage                      | Double             | none                    |
 | voltages                     | DataSet of Double  | Multi-column (0..n)     |
