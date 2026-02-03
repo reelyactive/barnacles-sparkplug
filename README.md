@@ -143,16 +143,17 @@ Options
 
 __barnacles-sparkplug__ supports the following options:
 
-| Property    | Default                  | Description                      | 
-|:------------|:-------------------------|:---------------------------------|
-| url         | "mqtt://localhost"       | Local MQTT broker                |
-| groupId     | "iot"                    | See Sparkplug specification      |
-| edgeNodeId  | "paretoanywhere"         | See Sparkplug specification      |
-| clientId    | "ParetoAnywhereEdgeNode" | Unique id of MQTT client         |
-| username    | null                     | Optional for MQTT authentication |
-| password    | null                     | Optional for MQTT authentication |
-| deviceTimeoutMilliseconds | 60000      | Activity timeout for DDEATH      |
-| printErrors | false                    | Print MQTT errors?               |
+| Property    | Default                  | Description                       | 
+|:------------|:-------------------------|:----------------------------------|
+| url         | "mqtt://localhost"       | Local MQTT broker                 |
+| groupId     | "iot"                    | See Sparkplug specification       |
+| edgeNodeId  | "paretoanywhere"         | See Sparkplug specification       |
+| clientId    | "ParetoAnywhereEdgeNode" | Unique id of MQTT client          |
+| username    | null                     | Optional for MQTT authentication  |
+| password    | null                     | Optional for MQTT authentication  |
+| deviceTimeoutMilliseconds | 60000      | Activity timeout for DDEATH       |
+| reconnectMilliseconds | 15000          | For initial MQTT connection error |
+| printErrors | false                    | Print MQTT errors?                |
 
 
 Acknowledgements
