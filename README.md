@@ -147,6 +147,7 @@ __barnacles-sparkplug__ converts standard [dynamb](https://reelyactive.github.io
 | pm1.0                        | Double             | none                    |
 | pm2.5                        | Double             | none                    |
 | pm10                         | Double             | none                    |
+| position                     | DataSet of Double  | 1, 2 or 3-column (xyz)  |
 | power                        | Double             | none                    |
 | pressure                     | Double             | none                    |
 | pressures                    | DataSet of Double  | Multi-column (0..n)     |
