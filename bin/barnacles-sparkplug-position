@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+
+const BarnaclesSparkplug = require('../lib/barnaclessparkplug.js');
+
+const INITIAL_HOLDOFF_MILLISECONDS = 5000;
+const UPDATE_PERIOD_MILLISECONDS = 5000;
+
+
+let barnaclesSparkplug = new BarnaclesSparkplug({ printErrors: true });
+setTimeout(generatePositionData, INITIAL_HOLDOFF_MILLISECONDS);
+
+
+function generatePositionData() {
+  let raddec = {
+    transmitterId: "440517108186",
+    transmitterIdType: 3,
+    rssiSignature: [],
+    position: [ -73.57127 + (Math.random() / 1000),
+                45.50884 + (Math.random() / 1000) ],
+    timestamp: Date.now()
+  };
+
+  barnaclesSparkplug.handleEvent('raddec', raddec);
+  setTimeout(generatePositionData, UPDATE_PERIOD_MILLISECONDS);
+}
+
+
+console.log('barnacles-sparkplug position simulator');

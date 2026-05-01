@@ -190,7 +190,20 @@ __barnacles-sparkplug__ supports the following options:
 | password    | null                     | Optional for MQTT authentication  |
 | deviceTimeoutMilliseconds | 60000      | Activity timeout for DDEATH       |
 | reconnectMilliseconds | 15000          | For initial MQTT connection error |
+| eventsToStore | { dynamb: {} }         | For filtering                     |
 | printErrors | false                    | Print MQTT errors?                |
+
+### eventsToStore
+
+The _eventsToStore_ option determines which events (i.e. _dynamb_) are to be published, and any event-specific options such as filter parameters.  For instance, to store only _dynamb_ objects with _temperature_:
+
+    {
+      dynamb: {
+        filterParameters: { acceptedProperties: [ 'temperature' ] }
+      }
+    }
+
+Consult the [dynamb-filter](https://github.com/reelyactive/dynamb-filter/) documentation for the respective parameters.
 
 
 Acknowledgements
