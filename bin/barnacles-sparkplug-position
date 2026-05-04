@@ -2,15 +2,21 @@
 
 const BarnaclesSparkplug = require('../lib/barnaclessparkplug.js');
 
-const INITIAL_HOLDOFF_MILLISECONDS = 5000;
+const BARNACLES_SPARKPLUG_OPTIONS = {
+    eventsToStore: { raddec: {}, dynamb: {}, spatem: {} },
+    printErrors: true
+};
+const RADDEC_HOLDOFF_MILLISECONDS = 2500;
+const SPATEM_HOLDOFF_MILLISECONDS = 5000;
 const UPDATE_PERIOD_MILLISECONDS = 5000;
 
 
-let barnaclesSparkplug = new BarnaclesSparkplug({ printErrors: true });
-setTimeout(generatePositionData, INITIAL_HOLDOFF_MILLISECONDS);
+let barnaclesSparkplug = new BarnaclesSparkplug(BARNACLES_SPARKPLUG_OPTIONS);
+setTimeout(generateRaddecPositionData, RADDEC_HOLDOFF_MILLISECONDS);
+setTimeout(generateSpatemPositionData, SPATEM_HOLDOFF_MILLISECONDS);
 
 
-function generatePositionData() {
+function generateRaddecPositionData() {
   let raddec = {
     transmitterId: "440517108186",
     transmitterIdType: 3,
@@ -21,7 +27,31 @@ function generatePositionData() {
   };
 
   barnaclesSparkplug.handleEvent('raddec', raddec);
-  setTimeout(generatePositionData, UPDATE_PERIOD_MILLISECONDS);
+  setTimeout(generateRaddecPositionData, UPDATE_PERIOD_MILLISECONDS);
+}
+
+
+function generateSpatemPositionData() {
+  let spatem = {
+    deviceId: "405171081865",
+    deviceIdType: 3,
+    type: "position",
+    data: {
+      "type": "FeatureCollection",
+      "features": [{
+        "type": "Feature",
+        "geometry": {
+          "type": "Point",
+          "coordinates": [ -73.57127 + (Math.random() / 1000),
+                           45.50884 + (Math.random() / 1000) ]
+        }
+      }]
+    },
+    timestamp: Date.now()
+  };
+
+  barnaclesSparkplug.handleEvent('spatem', spatem);
+  setTimeout(generateSpatemPositionData, UPDATE_PERIOD_MILLISECONDS);
 }
 
 

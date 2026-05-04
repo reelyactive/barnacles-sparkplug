@@ -206,6 +206,18 @@ The _eventsToStore_ option determines which events (i.e. _dynamb_) are to be pub
 
 Consult the [dynamb-filter](https://github.com/reelyactive/dynamb-filter/) documentation for the respective parameters.
 
+__barnacles-sparkplug__ can also publish valid _position_ data from _raddec_ and/or _spatem_ events.  For instance, to store only _position_ data from any source:
+
+    {
+      raddec: {},
+      dynamb: {
+        filterParameters: { acceptedProperties: [ 'position' ] }
+      },
+      spatem: {}
+    }
+
+Consult the [raddec-filter](https://github.com/reelyactive/dynamb-filter/) and [spatem-filter](https://github.com/reelyactive/spatem-filter/) documentation for their respective parameters.
+
 
 Acknowledgements
 ----------------

@@ -29,7 +29,9 @@
   },
   "dependencies": {
     "dynamb-filter": "^1.0.1",
-    "sparkplug-client": "^3.2.4"
+    "raddec-filter": "^1.0.1",
+    "sparkplug-client": "^3.2.4",
+    "spatem-filter": "^1.0.1"
   },
   "devDependencies": {},
   "bugs": {
