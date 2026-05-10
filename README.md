@@ -171,7 +171,7 @@ The [Eclipse Sparkplug](https://sparkplug.eclipse.org/) specification "ensures o
 
 ### ThingsBoard
 
-__barnacles-sparkplug__ will automatically publish data to the MQTT broker of a [ThingsBoard](https://thingsboard.io/) instance running on localhost (on port 1883).  Configure the [MQTT Sparkplug API](https://thingsboard.io/docs/reference/mqtt-sparkplug-api/) with a device profile that uses MQTT ClientId `ParetoAnywhereEdgeNode` to receive the data in ThingsBoard.
+__barnacles-sparkplug__ will automatically publish data to the MQTT broker of a [ThingsBoard](https://thingsboard.io/) instance running on localhost (on port 1883).  Configure the [MQTT Sparkplug API](https://thingsboard.io/docs/reference/mqtt-sparkplug-api/) with a device profile that uses MQTT ClientId `ParetoAnywhereEdgeNode` to receive the data in ThingsBoard.  Follow our [ThingsBoard Sparkplug Integration](https://reelyactive.github.io/diy/thingsboard-sparkplug/) tutorial for step-by-step instructions.
 
 For advanced integrations with ThingsBoard, configure the __barnacles-sparkplug__ options, listed below.
 
